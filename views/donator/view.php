@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'address:ntext',
             'description:ntext',
 	    [
-		'label'=>'Bikes donated', 
+		'label'=>'Gespendete Fahrräder', 
 		'format'=>'html', 
 		'value'=>Html::a(count($model->bikes), Url::to(['bike/index', 'BikeSearch[donator]'=>$model->id], true))
 	    ]

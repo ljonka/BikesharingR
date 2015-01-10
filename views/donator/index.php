@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\DonatorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Donators';
+$this->title = 'SpenderInnen';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="donator-index">
@@ -16,20 +17,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Donator', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('SpenderIn hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+	<?= Html::a('Fahrräder', Url::to(['bike/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name:ntext',
-            'phone:ntext',
-            'mail:ntext',
-            'address:ntext',
+            //'phone:ntext',
+            //'mail:ntext',
+            //'address:ntext',
             // 'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],

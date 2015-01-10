@@ -2,6 +2,31 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\data\ActiveDataProvider;
+use app\models\Helper;
+use app\models\Bike;
+
+$providerHelper = new ActiveDataProvider([
+        'query'=>Helper::find(),
+]);
+$providerBikes = new ActiveDataProvider([
+        'query'=>Bike::find(),
+]);
+
+$resultHelper = $providerHelper->getModels();
+$resultBikes = $providerBikes->getModels();
+
+$arrHelper = [];
+$arrBikes = [];
+
+
+foreach($resultHelper as $helper){
+        $arrHelper[$helper->id] = $helper->name;
+}
+foreach($resultBikes as $bike){
+	$arrBikes[$bike->id] = $bike->number;
+}
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Repair */
@@ -12,7 +37,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'helper')->textInput() ?>
+    <?= $form->field($model, 'helper')->dropDownList($arrHelper) ?>
+   
+    <?= $form->field($model, 'bike')->dropDownList($arrBikes) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 

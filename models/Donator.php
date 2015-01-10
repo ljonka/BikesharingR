@@ -44,10 +44,10 @@ class Donator extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'phone' => 'Phone',
+            'phone' => 'Telefon',
             'mail' => 'Mail',
-            'address' => 'Address',
-            'description' => 'Description',
+            'address' => 'Adresse',
+            'description' => 'Beschreibung',
         ];
     }
 

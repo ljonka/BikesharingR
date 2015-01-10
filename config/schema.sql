@@ -40,9 +40,11 @@ CREATE TABLE IF NOT EXISTS repair (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 
 	helper INT,
+	bike INT,
 	description TEXT,
 	
-	FOREIGN KEY(helper) REFERENCES helper(id)
+	FOREIGN KEY(helper) REFERENCES helper(id),
+	FOREIGN KEY(bike) REFERENCES bike(id)
 );
 
 /*Waiter*/

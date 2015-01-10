@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'name')->textInput(['autofocus'=>'true']) ?>
 
-    <?= $form->field($model, 'phone')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'phone')->textInput() ?>
 
-    <?= $form->field($model, 'mail')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'mail')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

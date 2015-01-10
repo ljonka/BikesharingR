@@ -1,0 +1,74 @@
+html, body {
+			height: 100%;
+		}
+		body{
+			margin:0px;
+			padding:0px;
+		}
+	      	#map {
+			height: 100%;
+	      	}
+		#popovers{
+			position: fixed;
+			width: 100%;
+			min-height: 110px;
+			bottom: 0px;
+			background-color: white;
+			opacity: 0.8;
+			z-index: 10;
+			display: none;
+			padding-left: 0px;
+			padding-right: 0px
+		}
+		#currentlocation{
+			position: fixed;
+			top: 10px;
+			right: 10px;
+			z-index: 10;
+			background-color: rgba(0, 60, 136, 0.5);
+			opacity: 0.7;
+			padding: 3px;
+			border-radius: 5px;
+		}
+		#currentlocation img{
+			width: 30px;
+		}
+		#konzept{
+			position: fixed;
+			top: 10px;
+			right: 55px;
+			z-index: 10;
+			background-color: rgba(0, 60, 136, 0.5);
+			opacity: 0.7;
+			padding: 3px;
+			border-radius: 5px;
+		}
+		#konzept img{
+			width: 30px;
+		}
+		#mail{
+			position: fixed;
+			top: 10px;
+			right: 100px;
+			z-index: 10;
+			background-color: rgba(0, 60, 136, 0.5);
+			opacity: 0.7;
+			padding: 3px;
+			border-radius: 5px;
+		}
+		#mail img{
+			width: 30px;
+		}
+		.closeinfo{
+			float: right;
+		}
+		.info, .bikes{
+			float: left;
+			margin-right: 10px;
+		}
+		.bike{
+			display: none;
+		}
+		.info h3{
+			margin-top: 3px;
+		}

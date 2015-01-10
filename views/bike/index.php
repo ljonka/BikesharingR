@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BikeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Bikes';
+$this->title = 'Fahrräder';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="bike-index">
@@ -16,7 +17,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Bike', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Fahrrad hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+	<?= Html::a('SpenderInnen', Url::to(['donator/index']) , ['class' => 'btn btn-success']) ?>
+	<?= Html::a('Reparaturen', Url::to(['repair/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

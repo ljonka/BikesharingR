@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name:ntext',
             [
 		'format'=>'html', 
-		'label'=>'Donator',
+		'label'=>'SpenderIn',
 		'value'=>Html::a($model->donator0->name, URL::to(['donator/view', 'id'=>$model->donator0->id], true))
 	    ],
             'offer_date',

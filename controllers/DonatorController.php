@@ -8,6 +8,7 @@ use app\models\DonatorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\Url;
 
 /**
  * DonatorController implements the CRUD actions for Donator model.
@@ -63,7 +64,8 @@ class DonatorController extends Controller
         $model = new Donator();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+	    return $this->redirect(Url::to(['bike/create', 'donator'=>$model->id]));
         } else {
             return $this->render('create', [
                 'model' => $model,

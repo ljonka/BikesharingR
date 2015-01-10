@@ -51,11 +51,11 @@ class Bike extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-	    'number' => 'Number',
-            'donator' => 'Donator',
-            'offer_date' => 'Offer Date',
-            'pickup_date' => 'Pickup Date',
-	    'description' => 'Description',
+	    'number' => 'Nummer',
+            'donator' => 'SpenderIn',
+            'offer_date' => 'Angebot vom',
+            'pickup_date' => 'Fahrrad abgeholt am',
+	    'description' => 'Beschreibung',
 	    'icon' => 'Icon',
 	    'image' => 'Image',
 	    'type' => 'Type'

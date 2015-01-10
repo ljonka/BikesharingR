@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\RepairSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Repairs';
+$this->title = 'Reparaturen';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="repair-index">
@@ -16,18 +17,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Repair', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Reparatur hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+	<?= Html::a('Fahrräder', Url::to(['bike/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
+	    'bike',
             'helper',
-            'description:ntext',
+            //'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

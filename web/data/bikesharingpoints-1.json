@@ -1,0 +1,12 @@
+{ "type": "FeatureCollection",
+	"features": [
+		{ "type": "Feature",
+        	"geometry": {"type": "Point", "coordinates": [12.09503,49.01687]},
+        	"properties": {"name": "Wechselwelt", "adresse":"Steckgasse 6, 93047 Regensburg", "oeffnungszeiten":"Mo: 13-16 Uhr, Mi: 17-20 Uhr, Fr & Sa: 11-17 Uhr", "bikes":0, "lastenraeder":1}
+        	},
+		{ "type": "Feature",
+        	"geometry": {"type": "Point", "coordinates": [12.08336,49.02007]},
+        	"properties": {"name": "BUND Naturschutz", "adresse":"Dr.-Johann-Maier-Str. 4, 93049 Regensburg<br/>Das Lastenfahrrad kann gegen Hinterlegung von 20 € Kaution entliehen werden.", "oeffnungszeiten":"Mo-Do: 8.30-13.00 Uhr", "bikes":0, "lastenraeder":1}
+        	}
+	]
+}

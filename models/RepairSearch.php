@@ -18,7 +18,7 @@ class RepairSearch extends Repair
     public function rules()
     {
         return [
-            [['id', 'helper'], 'integer'],
+            [['id', 'helper', 'bike'], 'integer'],
             [['description'], 'safe'],
         ];
     }

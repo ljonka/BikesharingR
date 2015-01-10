@@ -41,8 +41,9 @@ class Repair extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'helper' => 'Helper',
-            'description' => 'Description',
+	    'bike'=>'Fahrrad',
+            'helper' => 'Helfer',
+            'description' => 'Beschreibung',
         ];
     }
 

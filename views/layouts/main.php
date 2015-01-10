@@ -33,17 +33,17 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-	    $navDonator = ['label' => 'Donators', 'url'=>['/donator/index']];
-	    $navBike = ['label' => 'Bikes', 'url'=>['/bike/index']];
-	    $navHelper = ['label' => 'Helpers', 'url'=>['/helper/index']];
-            $navRepair = ['label' => 'Repairs', 'url'=>['/repair/index']];
-	    $navDistributor = ['label' => 'Distributors', 'url'=>['/distributor/index']];
-	    $navRent = ['label' => 'Rentals', 'url'=>['/rental/index']];
-	    $navProblem = ['label' => 'Problems', 'url'=>['/problem/index']];
+	    $navDonator = ['label' => 'Spender', 'url'=>['/donator/index']];
+	    $navBike = ['label' => 'Fahrräder', 'url'=>['/bike/index']];
+	    $navHelper = ['label' => 'Helfer', 'url'=>['/helper/index']];
+            $navRepair = ['label' => 'Reparaturen', 'url'=>['/repair/index']];
+	    $navDistributor = ['label' => 'Café´s', 'url'=>['/distributor/index']];
+	    $navRent = ['label' => 'Verleih', 'url'=>['/rental/index']];
+	    $navProblem = ['label' => 'Probleme', 'url'=>['/problem/index']];
 
 	    // a button group using Dropdown widget
 	    $actionDropdown = [
-		'label'=>'Dropdown',
+		'label'=>'Verwaltung',
        		'items' => [
 			$navDonator, $navBike, $navHelper, $navRepair, $navDistributor, 
 			$navRent, $navProblem
