@@ -30,7 +30,9 @@ class Helper extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'phone', 'mail'], 'string']
+            [['name', 'phone', 'mail'], 'string'],
+	    ['name', 'required'],
+	    ['mail', 'email'],
         ];
     }
 

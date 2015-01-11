@@ -2,21 +2,23 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\RentalSearch */
+/* @var $searchModel app\models\WaiterSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Verleih';
+$this->title = 'Mitarbeiter';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="rental-index">
+<div class="waiter-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Verleih hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Mitarbeiter hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Standorte verwalten', Url::to(['distributor/index']) , ['class' => 'btn btn-success']) ?>	
     </p>
 
     <?= GridView::widget([
@@ -26,10 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            //'type',
-            //'waiter',
-            //'bike',
-            'action_date:ntext',
+            'name:ntext',
+            [
+		'label'=>'Standort',
+		'class'=>'yii\grid\DataColumn',
+		'value'=>function($data){
+			return $data->distributor0->name;
+		}
+	    ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

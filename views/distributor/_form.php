@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'name')->textInput(['autofocus'=>'true']) ?>
 
     <?= $form->field($model, 'address')->textarea(['rows' => 6]) ?>
 
@@ -20,11 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'geoLat')->textInput() ?>
 
-    <?= $form->field($model, 'phone')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'phone')->textInput() ?>
 
-    <?= $form->field($model, 'mail')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'mail')->textInput() ?>
 
-    <?= $form->field($model, 'contact')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'contact')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

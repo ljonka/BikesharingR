@@ -35,7 +35,9 @@ class Distributor extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'address', 'phone', 'mail', 'contact'], 'string'],
-            [['geoLong', 'geoLat'], 'number']
+            [['geoLong', 'geoLat'], 'number'],
+	    ['mail', 'email'],
+	    [['name', 'address', 'phone', 'geoLong', 'geoLat'], 'required']
         ];
     }
 
@@ -47,12 +49,12 @@ class Distributor extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'address' => 'Address',
-            'geoLong' => 'Geo Long',
-            'geoLat' => 'Geo Lat',
-            'phone' => 'Phone',
+            'address' => 'Adresse und Öffnungszeiten',
+            'geoLong' => 'Geo Longitude',
+            'geoLat' => 'Geo Latitude',
+            'phone' => 'Telefon',
             'mail' => 'Mail',
-            'contact' => 'Contact',
+            'contact' => 'Ansprechpartner',
         ];
     }
 

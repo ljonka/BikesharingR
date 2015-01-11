@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\HelperSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Helpers';
+$this->title = 'HelferInnen';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="helper-index">
@@ -16,7 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Helper', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('HelferIn hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
+	<?= Html::a('Reparaturen', Url::to(['repair/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name:ntext',
             'phone:ntext',
             'mail:ntext',

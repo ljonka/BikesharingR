@@ -2,15 +2,16 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rental */
+/* @var $model app\models\Waiter */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Rentals', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Waiters', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="rental-view">
+<div class="waiter-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,11 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
-            ['label'=>'Aktion', 'value'=>($model->type == 1) ? 'Ausgabe': 'Rückgabe'],
-            ['label'=>'MitarbeiterIn', 'value'=>$model->waiter0->name . " - " . $model->waiter0->distributor0->name],
-            ['label'=>'Fahrrad', 'value'=>$model->bike0->number],
-            'action_date:ntext',
+            'id',
+            'name:ntext',
+             [
+                'format'=>'html',
+                'label'=>'Standort',
+                'value'=>Html::a(
+			$model->distributor0->name, 
+			URL::to(['distributor/view', 'id'=>$model->distributor0->id], true)
+		)
+            ],
+
         ],
     ]) ?>
 

@@ -9,9 +9,11 @@ use Yii;
  *
  * @property integer $id
  * @property integer $helper
+ * @property integer $bike
  * @property string $description
  *
  * @property Helper $helper0
+ * @property Bike $bike0
  */
 class Repair extends \yii\db\ActiveRecord
 {
@@ -29,8 +31,9 @@ class Repair extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['helper'], 'integer'],
-            [['description'], 'string']
+            [['helper', 'bike'], 'integer'],
+            [['description'], 'string'],
+	    [['description', 'bike', 'helper'], 'required']
         ];
     }
 
@@ -54,4 +57,13 @@ class Repair extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Helper::className(), ['id' => 'helper']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBike0()
+    {
+        return $this->hasOne(Bike::className(), ['id' => 'bike']);
+    }
+
 }

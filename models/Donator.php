@@ -32,7 +32,9 @@ class Donator extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'phone', 'mail', 'address', 'description'], 'string']
+            [['name', 'phone', 'mail', 'address', 'description'], 'string'],
+	    ['mail', 'email'],
+	    ['name', 'required']
         ];
     }
 

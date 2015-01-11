@@ -32,7 +32,8 @@ class Waiter extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'string'],
-            [['distributor'], 'integer']
+            [['distributor'], 'integer'],
+	    [['name', 'distributor'], 'required']
         ];
     }
 
@@ -44,7 +45,7 @@ class Waiter extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'distributor' => 'Distributor',
+            'distributor' => 'Standort',
         ];
     }
 

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\modles\Waiter;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Distributor */
@@ -36,6 +38,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'phone:ntext',
             'mail:ntext',
             'contact:ntext',
+	    [
+		'format'=>'html',
+                'label'=>'MitarbeiterInnen',
+                'value'=>Html::a(
+			count($model->waiters), 
+			URL::to(['waiter/index', 'WaiterSearch[distributor]'=>$model->id], true)
+		)
+	    ]
         ],
     ]) ?>
 

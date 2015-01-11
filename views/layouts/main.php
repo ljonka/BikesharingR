@@ -33,11 +33,11 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-	    $navDonator = ['label' => 'Spender', 'url'=>['/donator/index']];
+	    $navDonator = ['label' => 'SpenderInnen', 'url'=>['/donator/index']];
 	    $navBike = ['label' => 'Fahrräder', 'url'=>['/bike/index']];
-	    $navHelper = ['label' => 'Helfer', 'url'=>['/helper/index']];
+	    $navHelper = ['label' => 'HelferInnen', 'url'=>['/helper/index']];
             $navRepair = ['label' => 'Reparaturen', 'url'=>['/repair/index']];
-	    $navDistributor = ['label' => 'Café´s', 'url'=>['/distributor/index']];
+	    $navDistributor = ['label' => 'Standorte', 'url'=>['/distributor/index']];
 	    $navRent = ['label' => 'Verleih', 'url'=>['/rental/index']];
 	    $navProblem = ['label' => 'Probleme', 'url'=>['/problem/index']];
 

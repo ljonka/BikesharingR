@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 
-$this->title = 'My Yii Application';
+$this->title = 'Bikesharing Regensburg';
 ?>
 <div class="site-index">
 

@@ -33,7 +33,9 @@ class Rental extends \yii\db\ActiveRecord
     {
         return [
 	    [['action_date'], 'string'],
-            [['type', 'waiter', 'bike'], 'integer']
+            [['type', 'waiter', 'bike'], 'integer'],
+	    [['type', 'waiter', 'bike'], 'required'],
+	    ['type', 'number', 'min'=>1, 'max'=>2]
         ];
     }
 
@@ -44,10 +46,10 @@ class Rental extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type' => 'Type',
-            'waiter' => 'Waiter',
-            'bike' => 'Bike',
-            'action_date' => 'Action Date',
+            'type' => 'Ausgabe / Rückgabe',
+            'waiter' => 'MitarbeiterIn',
+            'bike' => 'Fahrrad',
+            'action_date' => 'Datum und Uhrzeit',
         ];
     }
 
