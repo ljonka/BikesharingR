@@ -36,14 +36,16 @@
 				title: "Global Imagery",
 				source: new ol.source.OSM({url:"http://b.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png"})
 			}),
+			
 			new ol.layer.Vector({
 				title: 'Bikesharingpoints',
 				source: new ol.source.GeoJSON({
-					url: 'data/bikesharingpoints-1.json',
+					url: 'http://bikesharing-r.de/index.php?r=site/distributors',
 					projection: 'EPSG:3857'
 				}),
 				style: iconStyle
 			})
+			
 		],
         	view: new ol.View({
 		  	//projection: 'EPSG:4326',
@@ -134,3 +136,6 @@
 	});
 	*/
 	
+$.getJSON("http://bikesharing-r.de/index.php?r=site/distributors", function(data){
+	console.log(data.type);
+});

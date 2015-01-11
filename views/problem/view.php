@@ -9,6 +9,8 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Problems', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$problemTypes = $model->problemTypes();
 ?>
 <div class="problem-view">
 
@@ -28,10 +30,19 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'type',
-            'waiter',
-            'bike',
+            //'id',
+            [
+		'label'=>'Problem Typ',
+		'value'=>$problemTypes[$model->type]
+	    ],
+            [
+		'label'=>'MitarbeiterIn', 
+		'value'=>$model->waiter0->name . " - " . $model->waiter0->distributor0->name
+	    ],
+            [
+		'label'=>'Fahrrad',
+		'value'=>$model->bike0->number
+	    ],
             'appearance_date:ntext',
             'solution_date:ntext',
         ],

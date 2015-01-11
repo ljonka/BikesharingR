@@ -34,8 +34,13 @@ class Problem extends \yii\db\ActiveRecord
     {
         return [
 	    [['appearance_date', 'solution_date'], 'string'],
-            [['type', 'waiter', 'bike'], 'integer']
+            [['type', 'waiter', 'bike'], 'integer'],
+	    [['type', 'waiter', 'bike', 'appearance_date'], 'required'],
         ];
+    }
+
+    public function problemTypes(){
+	return ['1'=>'Schlüssel verloren', '2'=>'Fahrrad geklaut', '3'=>'Fahrrad defekt'];
     }
 
     /**
@@ -45,11 +50,11 @@ class Problem extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type' => 'Type',
-            'waiter' => 'Waiter',
-            'bike' => 'Bike',
-            'appearance_date' => 'Appearance Date',
-            'solution_date' => 'Solution Date',
+            'type' => 'Problem Typ',
+            'waiter' => 'MitarbeiterIn',
+            'bike' => 'Fahrrad',
+            'appearance_date' => 'Festgestellt am',
+            'solution_date' => 'Gelöst am',
         ];
     }
 

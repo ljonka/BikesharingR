@@ -74,6 +74,6 @@ $this->registerLinkTag([
 <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.css"/ >
 <script src="/js/jquery.datetimepicker.js"></script>
 <script type="text/javascript">
-jQuery('#datetimepicker').datetimepicker({'lang':'de', 'inline':true, 'step':15});
+jQuery('#datetimepicker').datetimepicker({'lang':'de', 'inline':true, 'step':15, 'value':new Date()});
 
 </script>

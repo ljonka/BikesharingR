@@ -8,6 +8,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\data\ActiveDataProvider;
+use app\models\Distributor;
+use app\modles\Rental;
 
 class SiteController extends Controller
 {
@@ -97,4 +100,22 @@ class SiteController extends Controller
     public function actionMap(){
 	return $this->renderPartial('map');
     }
+
+    public function actionDistributors(){
+	$provider = new ActiveDataProvider([
+        	'query'=>Distributor::find(),
+	]);
+
+	$result = $provider->getModels();
+
+	$arrFeatures = [];
+	foreach($result as $distributor){
+        	$arrFeatures[] = $distributor->getGeoFeature();
+	};
+	$arrResult = ['type'=>'FeatureCollection', 'features'=>$arrFeatures];
+
+	\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+	return $arrResult;
+    }
+
 }
