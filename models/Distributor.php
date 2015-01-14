@@ -15,6 +15,7 @@ use Yii;
  * @property string $phone
  * @property string $mail
  * @property string $contact
+ * @property string $pin
  *
  * @property Waiter[] $waiters
  * @property Bikes[] $bikes
@@ -35,7 +36,7 @@ class Distributor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'address', 'phone', 'mail', 'contact'], 'string'],
+            [['name', 'address', 'phone', 'mail', 'contact', 'pin'], 'string'],
             [['geoLong', 'geoLat'], 'number'],
 	    ['mail', 'email'],
 	    [['name', 'address', 'phone', 'geoLong', 'geoLat'], 'required']
@@ -56,6 +57,7 @@ class Distributor extends \yii\db\ActiveRecord
             'phone' => 'Telefon',
             'mail' => 'Mail',
             'contact' => 'Ansprechpartner',
+	    'pin' => 'Zugangs-Pin'
         ];
     }
 

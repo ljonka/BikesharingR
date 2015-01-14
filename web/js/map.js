@@ -40,7 +40,7 @@
 			new ol.layer.Vector({
 				title: 'Bikesharingpoints',
 				source: new ol.source.GeoJSON({
-					url: 'http://bikesharing-r.de/index.php?r=site/distributors',
+					url: 'index.php?r=site/distributors',
 					projection: 'EPSG:3857'
 				}),
 				style: iconStyle

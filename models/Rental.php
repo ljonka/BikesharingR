@@ -15,6 +15,7 @@ use Yii;
  *
  * @property Bike $bike0
  * @property Waiter $waiter0
+ * @property arrString $types
  */
 class Rental extends \yii\db\ActiveRecord
 {
@@ -67,5 +68,9 @@ class Rental extends \yii\db\ActiveRecord
     public function getWaiter0()
     {
         return $this->hasOne(Waiter::className(), ['id' => 'waiter']);
+    }
+
+    public function getTypes() {
+	return ['1'=>'Fahrrad rausgeben', '2'=>'Fahrrad zurücknehmen'];
     }
 }

@@ -33,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'name:ntext',
             'address:ntext',
-            'geoLong',
-            'geoLat',
+            //'geoLong',
+            //'geoLat',
             'phone:ntext',
             'mail:ntext',
             'contact:ntext',
@@ -45,7 +45,8 @@ $this->params['breadcrumbs'][] = $this->title;
 			count($model->waiters), 
 			URL::to(['waiter/index', 'WaiterSearch[distributor]'=>$model->id], true)
 		)
-	    ]
+	    ],
+	    'pin:ntext'
         ],
     ]) ?>
 

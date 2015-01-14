@@ -67,7 +67,8 @@ CREATE TABLE IF NOT EXISTS distributor (
 	geoLat REAL,
 	phone TEXT,
 	mail TEXT,
-	contact TEXT
+	contact TEXT,
+	pin Text
 );
 
 /*Rental*/

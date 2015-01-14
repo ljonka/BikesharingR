@@ -41,6 +41,7 @@ class Bike extends \yii\db\ActiveRecord
             [['name', 'offer_date', 'pickup_date', 'description', 'icon', 'image', 'type'], 'string'],
             [['donator'], 'integer'],
 	    ['number', 'number'],
+	    ['number', 'required']
         ];
     }
 
@@ -52,7 +53,7 @@ class Bike extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-	    'number' => 'Nummer',
+	    'number' => 'Nummer vom Fahrrad',
             'donator' => 'SpenderIn',
             'offer_date' => 'Angebot vom',
             'pickup_date' => 'Fahrrad abgeholt am',

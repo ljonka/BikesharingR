@@ -19,7 +19,7 @@ class DistributorSearch extends Distributor
     {
         return [
             [['id'], 'integer'],
-            [['name', 'address', 'phone', 'mail', 'contact'], 'safe'],
+            [['name', 'address', 'phone', 'mail', 'contact', 'pin'], 'safe'],
             [['geoLong', 'geoLat'], 'number'],
         ];
     }
@@ -56,6 +56,7 @@ class DistributorSearch extends Distributor
             'id' => $this->id,
             'geoLong' => $this->geoLong,
             'geoLat' => $this->geoLat,
+	    'pin'=>$this->pin
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
