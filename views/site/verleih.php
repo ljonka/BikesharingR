@@ -13,3 +13,5 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= Html::a('Buchung durchführen', Url::to(['rental/create']) , ['class' => 'btn btn-success']) ?>
 
 <?= Html::a('Problem melden', Url::to(['problem/create']) , ['class' => 'btn btn-warning']) ?>
+
+<?= Html::a('Abmelden', Url::to(['site/verleih', 'ort'=>0]) , ['class' => 'btn btn-danger']) ?>

@@ -105,6 +105,8 @@ class SiteController extends Controller
 	$session->open();
 	($ort == null) ? $ort = $session['distributor_pin'] : $session['distributor_pin'] = $ort;
 	//cancel if $ort == null; check if pin is correct
+	if($ort == 0)
+		return $this->redirect(['index']);
 	if($ort == null || $ort == '')
 		throw new \yii\web\NotFoundHttpException;
 	$searchModel = new DistributorSearch();

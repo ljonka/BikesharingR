@@ -52,6 +52,7 @@ $this->title = 'Bikesharing Regensburg';
 			Hilf uns durch eine Spende das zu finanzieren.
 		</p>
 
+		<h4>Paypal</h4>
                 <p>
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 				<input type="hidden" name="cmd" value="_donations">
@@ -62,10 +63,21 @@ $this->title = 'Bikesharing Regensburg';
 				<input type="hidden" name="no_note" value="0">
 				<input type="hidden" name="currency_code" value="EUR">
 				<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
-				<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
-				<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+				<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal." title="Über Paypal spenden">
+				<img alt="Über Paypal spenden" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 			</form>
 		</p>
+
+		<h4>Überweisung</h4>
+		<p>	
+			
+                                 Transition Regensburg e.V. - gemeinnütziger Verein
+                         <br/>   IBAN: DE68 4306 0967 8217 3641 00
+                         <br/>   BIC: GENODEM1GLS
+                         <br/>   GLS Gemeinschaftsbank eG
+                         <br/>   Verwendungszweck: Bikesharing
+                </p>
+
             </div>
         </div>
 
