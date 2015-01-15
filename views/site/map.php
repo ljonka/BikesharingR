@@ -13,7 +13,7 @@
 	<script src="/js/ol.js" type="text/javascript"></script>
   </head>
   <body>
-	<div id="konzept"><a href="/" title="zurück zur Startseite"><img src="images/idea1.png" alt="Startseite"/></a></div>
+	<div id="konzept"><a href="/" title="zurück zur Startseite"><img src="/images/back57.png" alt="Startseite"/></a></div>
 	<div id="popovers">
 		<span class="closeinfo"><img src="/images/close3.png" alt="Close"/></span>
 		<div class="info">

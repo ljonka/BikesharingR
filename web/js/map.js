@@ -2,15 +2,18 @@
 	var iconStyle = new ol.style.Style({
 	  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
 	    opacity: 0.75,
-	    src: 'images/bicycle19.png'
+	    src: 'images/facebook30.png'
 	  }))
 	});
+	
 	var iconStyleHome = new ol.style.Style({
 	  image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
 	    opacity: 0.75,
 	    src: 'images/dwelling1.png'
 	  }))
 	});
+	
+	
 	var stroke = new ol.style.Stroke({
 			color: 'black',
 			width: 3
@@ -21,15 +24,20 @@
 	var textFill = new ol.style.Fill({
 		    color: '#000'
 	});
+	
 	var textFillBlue = new ol.style.Fill({
 		    color: 'blue'
 	});
+	
+	
 	var map = new ol.Map({
+		/*
 		interactions: ol.interaction.defaults().extend([
 			new ol.interaction.Select({
 				
 			})
         	]),
+		*/
         	target: 'map',
 		layers: [
 			new ol.layer.Tile({
@@ -130,12 +138,9 @@
 		window.open("konzept.html");
 	});
 	*/
-	/*
-	$("#mail").click(function(){
-		window.location.href = "mailto:info@bikesharing-r.de";
-	});
-	*/
-	
+
+/*	
 $.getJSON("http://bikesharing-r.de/index.php?r=site/distributors", function(data){
 	console.log(data.type);
 });
+*/
