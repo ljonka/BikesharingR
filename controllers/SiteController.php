@@ -11,6 +11,8 @@ use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use app\models\Distributor;
 use app\modles\Rental;
+use yii\web\Session;
+use app\models\DistributorSearch;
 
 class SiteController extends Controller
 {
@@ -95,6 +97,25 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionVerleih($ort = null){
+	//save distributor if given
+	$session = new Session;
+	$session->open();
+	($ort == null) ? $ort = $session['distributor_pin'] : $session['distributor_pin'] = $ort;
+	//cancel if $ort == null; check if pin is correct
+	if($ort == null || $ort == '')
+		throw new \yii\web\NotFoundHttpException;
+	$searchModel = new DistributorSearch();
+	$dataProvider = $searchModel->search(['DistributorSearch'=>['pin'=>$ort]]);
+
+	if(count($dataProvider->getModels()) == 0)
+		throw new \yii\web\NotFoundHttpException;
+
+	$arrModels = $dataProvider->getModels();
+	
+	return $this->render('verleih', ['model'=>$arrModels[0]]);
     }
 
     public function actionMap(){

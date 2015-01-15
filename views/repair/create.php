@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Repair */
 
-$this->title = 'Create Repair';
-$this->params['breadcrumbs'][] = ['label' => 'Repairs', 'url' => ['index']];
+$this->title = 'Reparatur hinzufügen';
+$this->params['breadcrumbs'][] = ['label' => 'Reparaturen', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="repair-create">

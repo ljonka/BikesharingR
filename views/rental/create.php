@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Rental */
 
-$this->title = 'Create Rental';
-$this->params['breadcrumbs'][] = ['label' => 'Rentals', 'url' => ['index']];
+$this->title = 'Buchung durchführen';
+$this->params['breadcrumbs'][] = ['label' => $modelDistributor->name, 'url' => ['site/verleih']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="rental-create">
@@ -16,6 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+	'modelWaiter' => $modelWaiter,
+	'modelBike' => $modelBike,
     ]) ?>
 
 </div>

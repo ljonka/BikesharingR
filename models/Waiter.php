@@ -44,7 +44,7 @@ class Waiter extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name von Café Mitarbeiter',
+            'name' => 'Name von Café MitarbeiterIn',
             'distributor' => 'Standort',
         ];
     }

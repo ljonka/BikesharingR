@@ -8,6 +8,8 @@ use app\models\BikeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
 
 /**
  * BikeController implements the CRUD actions for Bike model.
@@ -17,6 +19,22 @@ class BikeController extends Controller
     public function behaviors()
     {
         return [
+	    'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'allow' => false,
+                        'actions' => ['index', 'create', 'update', 'delete'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'create', 'update', 'delete'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

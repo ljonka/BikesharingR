@@ -8,6 +8,7 @@ use app\models\DistributorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * DistributorController implements the CRUD actions for Distributor model.
@@ -17,6 +18,22 @@ class DistributorController extends Controller
     public function behaviors()
     {
         return [
+	    'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'allow' => false,
+                        'actions' => ['index', 'create', 'update', 'delete'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'create', 'update', 'delete'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

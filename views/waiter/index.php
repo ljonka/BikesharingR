@@ -29,14 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'id',
             'name:ntext',
-            [
-		'label'=>'Standort',
-		'class'=>'yii\grid\DataColumn',
-		'value'=>function($data){
-			return $data->distributor0->name;
-		}
-	    ],
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

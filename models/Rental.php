@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\WaiterSearch;
 
 /**
  * This is the model class for table "rental".
@@ -35,7 +36,7 @@ class Rental extends \yii\db\ActiveRecord
         return [
 	    [['action_date'], 'string'],
             [['type', 'waiter', 'bike'], 'integer'],
-	    [['type', 'waiter', 'bike'], 'required'],
+	    [['type', 'bike'], 'required'], //waiter id must be filled on create/update
 	    ['type', 'number', 'min'=>1, 'max'=>2]
         ];
     }
@@ -71,6 +72,10 @@ class Rental extends \yii\db\ActiveRecord
     }
 
     public function getTypes() {
-	return ['1'=>'Fahrrad rausgeben', '2'=>'Fahrrad zurücknehmen'];
+	return ['1'=>'Fahrrad Ausgabe', '2'=>'Fahrrad Rückgabe'];
+    }
+
+    public function getWaiterId($name){
+	
     }
 }

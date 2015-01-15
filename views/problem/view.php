@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Problem */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Problems', 'url' => ['index']];
+$this->title = 'Problem';
+$this->params['breadcrumbs'][] = ['label' => $modelDistributor->name, 'url' => ['site/verleih']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $problemTypes = $model->problemTypes();
@@ -17,14 +18,14 @@ $problemTypes = $model->problemTypes();
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Stornieren', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Soll das Problem storniert werden?',
                 'method' => 'post',
             ],
         ]) ?>
+	<?= Html::a('zurück zur Übersicht', Url::to(['site/verleih']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= DetailView::widget([
@@ -44,7 +45,7 @@ $problemTypes = $model->problemTypes();
 		'value'=>$model->bike0->number
 	    ],
             'appearance_date:ntext',
-            'solution_date:ntext',
+            //'solution_date:ntext',
         ],
     ]) ?>
 

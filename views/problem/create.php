@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Problem */
 
-$this->title = 'Create Problem';
-$this->params['breadcrumbs'][] = ['label' => 'Problems', 'url' => ['index']];
+$this->title = 'Problem melden';
+$this->params['breadcrumbs'][] = ['label' => $modelDistributor->name, 'url' => ['site/verleih']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="problem-create">
@@ -16,6 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+	'modelWaiter' => $modelWaiter,
+	'modelBike'=>$modelBike,
     ]) ?>
 
 </div>

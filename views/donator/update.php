@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Donator */
 
-$this->title = 'Update Donator: ' . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Donators', 'url' => ['index']];
+$this->title = 'SpenderIn aktualisieren: ' . ' ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'SpenderInnen', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Aktualisieren';
 ?>
 <div class="donator-update">
 
