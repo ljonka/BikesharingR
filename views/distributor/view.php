@@ -46,7 +46,14 @@ $this->params['breadcrumbs'][] = $this->title;
 			URL::to(['waiter/index', 'WaiterSearch[distributor]'=>$model->id], true)
 		)
 	    ],
-	    'pin:ntext'
+	    [
+		'format'=>'html',
+		'label'=>'Interne Seite',
+		'value'=>Html::a(
+			$model->pin,
+			URL::to(['site/verleih', 'ort'=>$model->pin], true)
+		)
+	    ]
         ],
     ]) ?>
 
