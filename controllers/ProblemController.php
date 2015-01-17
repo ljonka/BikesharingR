@@ -30,14 +30,9 @@ class ProblemController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['create', 'delete'],
+                        'actions' => ['create', 'delete', 'update', 'index'],
                         'roles' => ['?'],
                     ],
-		    [
-			'allow' => false,
-                        'actions' => ['index', 'update'],
-                        'roles' => ['?'],
-		    ],
                     [
                         'allow' => true,
                         'actions' => ['index', 'create', 'update', 'delete'],
@@ -76,24 +71,12 @@ class ProblemController extends Controller
      */
     public function actionView($id)
     {
-	//save pin from distributor
-        $session = new Session;
-        $session->open();
-
-        $ort = $session['distributor_pin'];
-
-        //check if pin is valid/exists
-        $searchDistributor = new DistributorSearch();
-        $distributorProvider = $searchDistributor->search(['DistributorSearch'=>['pin'=>$ort]]);
-
-        if(count($distributorProvider->getModels()) == 0)
-                throw new \yii\web\ForbiddenHttpException;
-
-        $arrDistributor = $distributorProvider->getModels();
+	$model = $this->findModel($id);
+	$modelDistributor = $model->waiter0->distributor0;
 
         return $this->render('view', [
-            'model' => $this->findModel($id),
-	    'modelDistributor' => $arrDistributor[0],
+            'model' => $model,
+	    'modelDistributor' => $modelDistributor,
         ]);
     }
 
@@ -128,7 +111,7 @@ class ProblemController extends Controller
 
 
         if(count($arrPost) > 0){
-                $arrPost['Problem']['appearance_date'] = $arrPost['appearance_date'];
+                $arrPost['Problem']['appearance_date'] = date('d.m.Y H:i');
                 $arrPost['WaiterSearch']['distributor'] = $modelDistributor->id;
                 $searchWaiter = new WaiterSearch();
                 $waiterProvider = $searchWaiter->search($arrPost);
@@ -176,12 +159,18 @@ class ProblemController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+	$modelWaiter = $model->waiter0;
+	$modelBike = $model->bike0;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+	    $model->solution_date = date('d.m.Y H:i');
+	    $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+		'modelWaiter' => $modelWaiter,
+		'modelBike' => $modelBike,
             ]);
         }
     }

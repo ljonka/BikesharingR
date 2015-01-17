@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Repair */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Repairs', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Reparaturen', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="repair-view">
@@ -16,13 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Aktualisieren', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Entfernen', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Soll dieser Eintrag entfernt werden?',
-                'method' => 'post',
-            ],
-        ]) ?>
     </p>
 
     <?= DetailView::widget([

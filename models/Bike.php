@@ -87,4 +87,5 @@ class Bike extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Rental::className(), ['bike' => 'id']);
     }
+
 }

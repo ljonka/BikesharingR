@@ -69,6 +69,34 @@ class Distributor extends \yii\db\ActiveRecord
         return $this->hasMany(Waiter::className(), ['distributor' => 'id']);
     }
 
+    public function getBikeModels(){
+	$bikeSearch = new BikeSearch();
+	return $bikeSearch->getBikesForDistributor($this);
+	
+    }
+    public function getNumBikes(){
+	$arrModels = $this->getBikeModels();
+	$intBikes = 0;
+	foreach($arrModels as $model){
+		$rentalEnd = $model->rentals[count($model->rentals)-1];
+		if($rentalEnd->type == 2 && $rentalEnd->waiter0->distributor0->id == $this->id && strpos($model->description, 'Lastenrad') === false){
+			$intBikes++;
+		}
+	}
+	return $intBikes;
+    }
+    public function getNumTransportBikes(){
+        $arrModels = $this->getBikeModels();
+        $intBikes = 0;
+        foreach($arrModels as $model){
+		$rentalEnd = $model->rentals[count($model->rentals)-1];
+                if($rentalEnd->type == 2 && $rentalEnd->waiter0->distributor0->id == $this->id && strpos($model->description, 'Lastenrad') !== false){
+                        $intBikes++;
+                }
+        }
+        return $intBikes;
+    }
+
     public function getBikes(){
 	$arrBikes = array();
         $arrWaiters = $this->waiters;
@@ -91,7 +119,7 @@ class Distributor extends \yii\db\ActiveRecord
         //Search for returned bikes in current distribution point
         foreach($arrWaiters as $waiter){
                 $arrRentals = $waiter->rentals;
-                //If last rental was a return, mark bike available
+		//If last rental was a return, mark bike available
                 if(count($arrRentals) >= 1 &&
                    $arrRentals[count($arrRentals)-1]->type == 2 &&
 		   strpos($arrRentals[count($arrRentals)-1]->bike0->description, 'Lastenrad') !== false){
@@ -100,6 +128,15 @@ class Distributor extends \yii\db\ActiveRecord
          }
         return $arrBikes;
     }
+
+    /*
+	Bug: Only one bike possible for rent on location, to fix that change search for distribution point in rentals
+
+	Get Waiters for current distribution point
+	Get Rentals for current waiter
+	Get Last checked in bikes not checked out after
+	return array of current checked in bikes for distribution point
+    */
 
     public function getGeoFeature(){
 	$arrFeature = [
@@ -112,8 +149,8 @@ class Distributor extends \yii\db\ActiveRecord
                         'name'=>$this->name,
                         'adresse'=>'<pre>'.$this->address.'</pre>',
                         'oeffnungszeiten'=>'',
-                        'bikes'=>count($this->getBikes()),
-                	'lastenraeder'=>count($this->getTransportBikes())
+                        'bikes'=>$this->getNumBikes(),
+                	'lastenraeder'=>$this->getNumTransportBikes()
         	]
         ];
 	return $arrFeature;

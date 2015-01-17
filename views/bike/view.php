@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'number',
             'name:ntext',
+	    'description:ntext',
             [
 		'format'=>'html', 
 		'label'=>'SpenderIn',

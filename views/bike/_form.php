@@ -41,10 +41,6 @@ $this->registerLinkTag([
 
     <?= $form->field($model, 'donator')->dropDownList($arrDonator, ['autofocus'=>'true']) ?>
 
-    <p>
-        <?= Html::a('Neuen Spender hinzufügen', Url::to(['donator/create']) , ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= $form->field($model, 'number')->input('number') ?>
 
     <?= $form->field($model, 'name')->textInput() ?>

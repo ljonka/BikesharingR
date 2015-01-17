@@ -18,8 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Fahrrad hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
-	<?= Html::a('SpenderInnen', Url::to(['donator/index']) , ['class' => 'btn btn-success']) ?>
-	<?= Html::a('Reparaturen', Url::to(['repair/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -28,12 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
 	    'number',
             'name:ntext',
             //'donator',
             //'offer_date',
-            //'pickup_date',
+            'pickup_date',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

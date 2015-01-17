@@ -77,25 +77,11 @@ class RentalController extends Controller
      */
     public function actionView($id)
     {
-
-	 //save pin from distributor
-        $session = new Session;
-        $session->open();
-
-        $ort = $session['distributor_pin'];
-
-        //check if pin is valid/exists
-        $searchDistributor = new DistributorSearch();
-        $distributorProvider = $searchDistributor->search(['DistributorSearch'=>['pin'=>$ort]]);
-
-        if(count($distributorProvider->getModels()) == 0)
-                throw new \yii\web\ForbiddenHttpException;
-
-        $arrDistributor = $distributorProvider->getModels();
-	
+	$model = $this->findModel($id);
+	$modelDistributor = $model->waiter0->distributor0;
         return $this->render('view', [
-            'model' => $this->findModel($id),
-	    'modelDistributor' => $arrDistributor[0],
+            'model' => $model,
+	    'modelDistributor' => $modelDistributor,
         ]);
     }
 
@@ -188,6 +174,7 @@ class RentalController extends Controller
     {
         $model = $this->findModel($id);
 	$modelWaiter = $model->waiter0;
+	$modelBike = $model->bike0;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -195,6 +182,7 @@ class RentalController extends Controller
             return $this->render('update', [
                 'model' => $model,
 		'modelWaiter'=>$modelWaiter,
+		'modelBike' => $modelBike,
             ]);
         }
     }

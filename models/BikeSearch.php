@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Bike;
+use app\models\Rental;
 
 /**
  * BikeSearch represents the model behind the search form about `app\models\Bike`.
@@ -30,6 +31,14 @@ class BikeSearch extends Bike
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
+    }
+
+    public function getBikesForDistributor($distributor){
+	return Bike::find()
+		->join('JOIN', 'rental', 'rental.bike = bike.id')
+		->join('JOIN', 'waiter', 'waiter.id = rental.waiter')
+		->orderBy('rental.action_date')
+		->all();
     }
 
     /**

@@ -43,6 +43,11 @@ class Problem extends \yii\db\ActiveRecord
 	return ['1'=>'Schlüssel verloren', '2'=>'Fahrrad geklaut', '3'=>'Fahrrad defekt'];
     }
 
+    public function getProblemType(){
+	$arrProblemTypes = $this->problemTypes();
+	return $arrProblemTypes[$this->type];
+    }
+
     /**
      * @inheritdoc
      */

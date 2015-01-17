@@ -82,7 +82,7 @@ class DonatorController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //return $this->redirect(['view', 'id' => $model->id]);
-	    return $this->redirect(Url::to(['bike/create', 'donator'=>$model->id]));
+	    return $this->redirect(Url::to(['index']));
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('SpenderIn hinzufügen', ['create'], ['class' => 'btn btn-success']) ?>
-	<?= Html::a('Fahrräder', Url::to(['bike/index']) , ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

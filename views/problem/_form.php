@@ -22,10 +22,8 @@ use app\models\BikeSearch;
 
     <?= $form->field($modelBike, 'number')->input('number') ?>
  
-    <?= Html::hiddenInput('appearance_date', date("d.m.Y h:i")) ?>
-
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Absenden' : 'Aktualisieren', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Absenden' : 'Problem lösen', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

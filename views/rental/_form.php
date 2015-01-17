@@ -28,7 +28,7 @@ use yii\data\ActiveDataProvider;
 
     <?= $form->field($modelBike, 'number')->input('number') ?>
 
-    <?= Html::hiddenInput('action_date', date("d.m.Y h:i")) ?>
+    <?= Html::hiddenInput('action_date', date("d.m.Y H:i")) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Absenden' : 'Aktualisieren', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

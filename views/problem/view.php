@@ -45,7 +45,7 @@ $problemTypes = $model->problemTypes();
 		'value'=>$model->bike0->number
 	    ],
             'appearance_date:ntext',
-            //'solution_date:ntext',
+            'solution_date:ntext',
         ],
     ]) ?>
 

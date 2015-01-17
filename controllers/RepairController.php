@@ -23,8 +23,8 @@ class RepairController extends Controller
                 'only' => ['index', 'create', 'update', 'delete'],
                 'rules' => [
                     [
-                        'allow' => false,
-                        'actions' => ['index', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'actions' => ['index', 'create', 'update'],
                         'roles' => ['?'],
                     ],
                     [

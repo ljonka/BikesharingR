@@ -22,11 +22,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
-            //'type',
-            //'waiter',
-            //'bike',
+            ['label'=>'Problem Typ', 'value'=>function($data){
+                return $data->getProblemType();
+            }],
+            ['label'=>'MitarbeiterIn', 'value'=>function($data){
+		return $data->waiter0->name . " - " . $data->waiter0->distributor0->name;
+	    }],
+            ['label'=>'Fahrrad', 'value'=>function($data){
+                return $data->bike0->number;
+            }],
             'appearance_date:ntext',
-            // 'solution_date:ntext',
+            'solution_date:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

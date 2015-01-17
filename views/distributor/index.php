@@ -32,9 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'address:ntext',
             //'geoLong',
             //'geoLat',
-            // 'phone:ntext',
+            'phone:ntext',
             // 'mail:ntext',
             // 'contact:ntext',
+	    [
+		'label'=>'Fahrräder',
+		'value'=>function($data){
+			return $data->getNumBikes() + $data->getNumTransportBikes();
+		}	
+	    ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
