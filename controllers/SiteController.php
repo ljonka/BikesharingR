@@ -64,11 +64,16 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+	$modelDistributor = new DistributorSearch();
+	$request = Yii::$app->request->post();
+	if(isset($request['DistributorSearch']['pin'])){
+	    return $this->redirect(['site/verleih', 'ort'=>$request['DistributorSearch']['pin']]);
+	}if ($model->load($request) && $model->login()) {
             return $this->goBack();
         } else {
             return $this->render('login', [
                 'model' => $model,
+		'modelDistributor' => $modelDistributor,
             ]);
         }
     }
