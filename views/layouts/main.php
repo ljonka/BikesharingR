@@ -79,7 +79,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; <a href="http://transition-regensburg.de" target="_blank">Transition Regensburg im Wandel</a> <?= date('Y') ?></p>
+            <p class="pull-left"><a href="http://transition-regensburg.de" target="_blank">Transition Regensburg im Wandel</a> <?= date('Y') ?> - Design und Programmierung: Leonid Verhovskij</p>
             <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>

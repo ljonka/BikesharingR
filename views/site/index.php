@@ -36,7 +36,7 @@ $this->title = 'Bikesharing Regensburg';
 			Das Verleih wird von uns völlig kostenlos angeboten,
 			um das zu ermöglichen sind wir auf deine Hilfe angewiesen.
 			Wir nehmen dein Fahrrad kostenlos an, ehrenamtliche Helfer reparieren es, 
-			danach kann dein Fahrrad über kooperierende Café`s ausgeliehen werden.
+			danach kann dein Fahrrad über kooperierende Cafés ausgeliehen werden.
 		</p>
 
                 <p><a class="btn btn-default" href="<?= Url::to(['/site/contact']);?>">Kontakt Formular</a></p>
@@ -45,8 +45,9 @@ $this->title = 'Bikesharing Regensburg';
                 <h2>Spende für Ersatzteile!</h2>
 
                 <p>
-			Die gespendeten Räder haben oft defekte oder veraltete Teile, 
-			um die Räder bei der Reparatur wieder Verkehrstauglich zu machen
+			Die gespendeten Räder haben oft defekte oder veraltete Teile.
+			<br />
+			Um die Räder bei der Reparatur wieder verkehrstauglich zu machen
 			müssen wir einige Ersatzteile besorgen. 
 			<br /> 
 			Hilf uns durch eine Spende das zu finanzieren.
